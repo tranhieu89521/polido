@@ -1,0 +1,22 @@
+<?php
+ $st='';
+ if(!isset($_GET['sl'])){
+	$_GET['sl']=1;
+	if(isset($_GET['mausac'])&&isset($_GET['kichco'])){
+		if($sl['soluong']==0){
+			$_GET['sl']=0;
+			$st='style="display:inline-block;pointer-events:none;"';
+		}
+	}
+   }
+   else{
+	if(isset($_GET['cong'])){
+		if(($_GET['sl']<$sl['soluong'])&&($_GET['sl']>0)){
+		  $_GET['sl']+=1;
+		}
+	}
+	if(isset($_GET['tru'])){
+		if($_GET['sl']>1){
+	  $_GET['sl']-=1;}
+  }
+   } ?>

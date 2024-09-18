@@ -1,0 +1,29 @@
+<?php
+    if(isset($_GET['xuly'])){
+      if(isset($_SESSION['idkh'])){
+        $ttkh=$obj->getTTKH($_SESSION['idkh']);
+        $tenkh=$ttkh['tenkh'];
+        $sdt=$ttkh['sdt'];
+        $email=$ttkh['email'];
+        $diachi=$ttkh['diachi'];
+      }
+      if($_GET['xuly']=='muangay'){
+        require_once('controller/C_xulymuangay.php');
+      }
+      if($_GET['xuly']=='mua'){
+        require_once('controller/C_xulymua.php');
+      }
+    }
+    else{
+      //$slmax=$obj->slmax();
+      if(isset($_SESSION['idkh'])&&(!isset($tenkh))&&(!isset($sdt))&&(!isset($email))&&(!isset($diachi))){
+        $ttkh=$obj->getTTKH($_SESSION['idkh']);
+        $tenkh=$ttkh['tenkh'];
+        $sdt=$ttkh['sdt'];
+        $email=$ttkh['email'];
+        $diachi=$ttkh['diachi'];
+      }
+    require_once('view/ttkhachhang.php');
+    }
+   
+?>

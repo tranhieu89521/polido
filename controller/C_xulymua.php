@@ -1,0 +1,23 @@
+<?php
+   /* $xuly= new database();
+    $slmax=$xuly->slmax();
+    $t=0;
+    for($i=1;$i<=$slmax;$i++){
+        if(isset($_SESSION['gh'][$i])){
+            $t+=1;
+        }}*/
+    if(isset($_SESSION['gh'])){
+    //$slmax=$obj->slmax();
+    if(count($_SESSION['gh'])>0){
+        require_once('view/ttkhachhang.php');
+    }
+    else{
+        require_once('controller/C_giohang.php');
+        require_once('view/giohang.php');
+    }
+    }
+    else{
+        require_once('controller/C_giohang.php');
+        require_once('view/giohang.php');
+    }
+?>

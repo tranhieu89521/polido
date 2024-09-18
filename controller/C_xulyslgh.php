@@ -1,0 +1,33 @@
+<?php 
+	if(isset($_GET['cong'])){
+        $i=(int)$_GET['cong'];
+        if($_SESSION['gh'][$i]['sl']<$_SESSION['gh'][$i]['slmax']){
+            $_SESSION['gh'][$i]['sl']+=1;
+		}
+        /*for($i=1;$i<=$slmax;$i++){
+        if($_GET['cong']==$i){
+		if($_SESSION['gh'][$i]['sl']==$_SESSION['gh'][$i]['slmax']){
+            $_SESSION['gh'][$i]['sl']+=0;
+		}
+		else{ $_SESSION['gh'][$i]['sl']+=1;}}}*/
+    }
+	if(isset($_GET['tru'])){
+        $i=(int)$_GET['tru'];
+        if($_SESSION['gh'][$i]['sl']>1){
+            $_SESSION['gh'][$i]['sl']-=1;}
+        /*for($i=1;$i<=$slmax;$i++){
+        if($_GET['tru']==$i){
+		if($_SESSION['gh'][$i]['sl']>0){
+            $_SESSION['gh'][$i]['sl']-=1;}}}*/
+        }
+     if(isset($_GET['xoa'])){
+        $i=(int)$_GET['xoa'];
+        $_SESSION['gh'][$i]=null;
+        unset($_SESSION['gh'][$i]);
+        /*for($i=1;$i<=$slmax;$i++){
+        if($_GET['xoa']==$i){
+            $_SESSION['gh'][$i]=null;
+            unset($_SESSION['gh'][$i]);
+        }}*/
+    }
+?>
